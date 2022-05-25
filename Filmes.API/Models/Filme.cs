@@ -8,6 +8,8 @@ namespace Filmes.API.Models
 {
     public class Filme
     {
+        public int Id { get; set; }
+
         [Required]
         [StringLength(200)]
         public string Titulo { get; set; }
@@ -25,7 +27,7 @@ namespace Filmes.API.Models
 
         public override string ToString()
         {
-            return $"Filme:{Titulo} - {Genero}\r\nDiretor:{Diretor} Duracao:{Duracao}";
+            return $"Filme:{Titulo} - {Genero}\r\nDiretor:{Diretor} Duracao:{Duracao} (#{Id})";
         }
     }
 }
