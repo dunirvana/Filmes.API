@@ -29,5 +29,15 @@ namespace Filmes.API.Controllers
             Console.WriteLine($"\r\n[RecuperarFilmes]\r\nTotal de filmes:{filmes.Count}");
             return filmes;
         }
+
+        [HttpGet("{id}")]
+        public Filme RecuperarFilmePorId(int id)
+        {
+            var filme = filmes.FirstOrDefault(f => f.Id == id);
+
+            Console.WriteLine($"\r\n[RecuperarFilmePorId]\r\nId procurado:{id}\r\nEncontrou:{filme}");
+
+            return filme;
+        }
     }
 }
